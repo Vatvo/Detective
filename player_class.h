@@ -4,8 +4,7 @@ Program: Player Class
 Filename: player_class.h
 */
 
-#ifndef player_class
-#define player_class
+#pragma once
 
 #include <iostream>
 
@@ -18,5 +17,3 @@ class player_class {
         clue_class inventory[5];
 
 };
-
-#endif

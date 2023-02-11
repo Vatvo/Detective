@@ -4,8 +4,7 @@ Program: Character Class
 Filename: character_class.h
 */
 
-#ifndef character_class
-#define character_class
+#pragma once
 
 #include <iostream>
 
@@ -16,5 +15,3 @@ using namespace std;
 class character_class {
 
 };
-
-#endif

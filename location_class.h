@@ -4,8 +4,7 @@ Program: Location Class
 Filename: location_class.h
 */
 
-#ifndef location_class
-#define location_class
+#pragma once
 
 #include <iostream>
 
@@ -17,5 +16,3 @@ using namespace std;
 class location_class {
 
 };
-
-#endif
