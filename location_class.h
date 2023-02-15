@@ -7,6 +7,7 @@ Filename: location_class.h
 #pragma once
 
 #include <iostream>
+#include <string>
 
 #include "character_class.h"
 #include "clue_class.h"
@@ -20,10 +21,25 @@ class location_class {
         character_class assigned_character; //The character assigned to this location
 
     public:
-        
-        location_class(); //Constructor
+        const location_class& operator= (const location_class&); //Override assignment operator
+        void set_character(character_class); //Sets assigned_character using a character_class object
+        void set_character(string); //Sets the assigned_character using a file
+        character_class get_character();
+
+        location_class(); //Default Constructor
+        location_class(string filename); //Constructor with specified filename
         ~location_class(); //Destructor
 
-
-        
 };
+
+location_class :: location_class() {
+
+}
+
+location_class :: location_class(string filename) {
+
+}
+
+const location_class& location_class :: operator= (const location_class& other_location) {
+
+}
