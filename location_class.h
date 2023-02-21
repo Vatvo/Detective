@@ -27,7 +27,7 @@ class location_class {
         void set_description(string);
         void set_character(character_class&); //Sets assigned_character using a character_class object
 
-        character_class get_character(); //Returns the assigned_character
+        const character_class get_character(); //Returns the assigned_character
 
         location_class(); //Default Constructor
         location_class(string, character_class&); //Constructor with specified filename
@@ -47,9 +47,13 @@ location_class :: location_class(string filename, character_class &character) {
     string data_storage[2];
 
     int i = 0;
+    string input_text;
     while (getline(location_file, input_text)) {
         data_storage[i] = input_text;
+        i++;
     }
+
+    location_file.close();
 
     set_name(data_storage[0]);
     set_description(data_storage[1]);
@@ -63,10 +67,10 @@ void location_class :: set_name(string name) {
 void location_class :: set_description(string describe) {
     description = describe;
 }
-void location_class :: set_character(character_class &set_char) {
-    assigned_character = set_char;
+void location_class :: set_character(character_class& set_char) {
+    assigned_character = &set_char;
 }
 
-character_class location_class :: get_character() {
-    return assigned_character;
+const character_class location_class :: get_character() {
+    return *assigned_character;
 }
