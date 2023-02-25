@@ -6,7 +6,6 @@ Filename: clue_class.h
 
 #pragma once
 
-#include <iostream>
 #include <string>
 #include <fstream>
 
@@ -27,7 +26,6 @@ class clue_class {
 
         clue_class(); //Default Constructor
         clue_class(string); //Constructor with specified file
-        ~clue_class(); //Destructor
 };
 
 void clue_class :: set_name(string name) {
@@ -47,6 +45,7 @@ const string clue_class :: get_description() {
 }
 
 clue_class :: clue_class() {
+
     set_name("");
     set_description("");
 }

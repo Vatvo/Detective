@@ -37,7 +37,6 @@ class location_class {
 
 location_class :: location_class() {
     assigned_character = nullptr;
-    description = "";
 }
 
 location_class :: location_class(string filename, character_class &character) {
