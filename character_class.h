@@ -40,9 +40,8 @@ void character_class :: set_character_name(string name) {
 
 void character_class :: set_dialogue_list(dialogue_class list[]) {
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++)
         dialogue_list[i] = list[i];
-    }
 }
 
 void character_class :: set_current_dialogue(int id) {
@@ -68,4 +67,29 @@ const int character_class :: get_current_dialogue_id() {
 const string character_class :: get_current_dialogue_text() {
 
     return dialogue_list[current_dialogue].get_dialogue_text();
+}
+
+character_class :: character_class() {
+    set_character_name("No Character Name");
+    set_current_dialogue(-1);
+}
+
+character_class :: character_class(string filepath) {
+
+    ifstream character_file(filepath);
+    string data_storage[30];
+
+    int i = 0;
+    string input_text;
+    while(getline(character_file, input_text)) {
+        data_storage[i] = input_text;
+        i++;
+    }
+
+    character_file.close();
+
+    set_character_name(data_storage[0]);
+    dialogue_class temp_dialogue;
+
+    for(int i = 1; i < 30; )
 }

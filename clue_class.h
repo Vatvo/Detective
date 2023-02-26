@@ -46,11 +46,12 @@ const string clue_class :: get_description() {
 
 clue_class :: clue_class() {
 
-    set_name("");
-    set_description("");
+    set_name("No Clue Name");
+    set_description("No Clue Description");
 }
 
 clue_class :: clue_class(string filename) {
+    
     ifstream clue_file(filename);
     string data_storage[2];
 

@@ -39,9 +39,8 @@ void dialogue_class :: set_dialogue_text(string input_text) {
 
 void dialogue_class :: set_dialogue_paths(dialogue_path input_paths[10]) {
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++)
         paths[i] = input_paths[i];
-    }
 }
 
 const string dialogue_class :: get_dialogue_text() {
@@ -56,7 +55,12 @@ const dialogue_path* dialogue_class :: get_dialogue_paths() {
 
 dialogue_class :: dialogue_class() {
 
-    set_dialogue_text("");
+    set_dialogue_text("No Dialogue Text");
+
+    for (int i = 0; i < 10; i++) {
+        paths[i].id = -1;
+        paths[i].trigger = "No Dialogue Trigger";
+    }
 }
 
 dialogue_class :: dialogue_class(string input_text, dialogue_path input_paths[]) {
