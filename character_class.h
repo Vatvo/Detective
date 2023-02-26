@@ -89,7 +89,28 @@ character_class :: character_class(string filepath) {
     character_file.close();
 
     set_character_name(data_storage[0]);
-    dialogue_class temp_dialogue;
 
-    for(int i = 1; i < 30; )
+    dialogue_class feed_dialogue[10];
+
+    for (int i = 1; i < 21; i += 2) {
+        dialogue_class temp_dialogue;
+        temp_dialogue.set_dialogue_text(data_storage[i]);
+
+        dialogue_path pathlist[10];
+        string paths = data_storage[i+1];
+
+        for (int j = 0; j < paths.length(); j += 2) {
+            dialogue_path temp_path;
+            temp_path.trigger = paths[i];
+            temp_path.id = paths[i+1];
+
+            pathlist[j/2] = temp_path;
+        }
+
+        temp_dialogue.set_dialogue_paths(pathlist);
+
+        feed_dialogue[(i-1)/2] = temp_dialogue;
+    }
+
+    set_dialogue_list(feed_dialogue);
 }

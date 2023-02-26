@@ -1,2 +1,21 @@
 Walter White
-I 
+Detective, I heard there was a murder. How can I help you?
+m1
+I don't know anything about a knifing, sir.
+k2
+Did I say knifing? Haha silly me. I was just guessing...
+k9
+null
+0
+null
+0
+null
+0
+null
+0
+null
+0
+I wouldn't know anything about that
+0
+Alright you got me. Here's the knife.
+$
